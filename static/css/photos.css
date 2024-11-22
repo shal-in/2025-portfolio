@@ -52,4 +52,5 @@
     height: auto;
 
     margin-bottom: 2%;
+    user-select: none;
 }
