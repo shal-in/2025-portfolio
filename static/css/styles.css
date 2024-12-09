@@ -9,6 +9,7 @@
     --white-text: #FFFFFF;
     --red-text: red;
     --black-text: #4b4b4b;
+    --grey-text: #686868;
 }
 
 html{
@@ -17,18 +18,50 @@ html{
     letter-spacing: 1.05px;
 }
 
+html {
+    scrollbar-width: thin; /* Thinner scrollbar for Firefox */
+    scrollbar-color: red transparent; /* Red scrollbar thumb for Firefox */
+}
+
+html::-webkit-scrollbar {
+    width: 8px; /* Thin vertical scrollbar */
+    height: 8px; /* Thin horizontal scrollbar */
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent; /* Track background */
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: red; /* Color of the moving thumb */
+    border-radius: 10px; /* Rounded thumb edges */
+    height: 20px; /* Minimum size of the thumb */
+}
+
+html::-webkit-scrollbar-thumb:vertical {
+    min-height: 30px; /* Makes the vertical scrollbar thumb shorter */
+}
+
+html::-webkit-scrollbar-thumb:horizontal {
+    min-width: 30px; /* Makes the horizontal scrollbar thumb shorter */
+}
+
 body{
-    padding-top: 6rem;
+    padding-top: 5.1rem;
     overflow: auto;
 }
 
 section{
     max-width: 1800px;
-    min-height:90vh;
+    min-height: 100px;
     margin: auto;
-    background-color: cadetblue;
+    background-color: var(--background);
 
-    border: 1px solid black;
+    /* border: 1px solid white; */
+}
+
+::selection{
+    background-color: rgb(84, 51, 51);
 }
 
 /* Header */
@@ -52,39 +85,53 @@ section{
 }
 
 .header{
-    max-width: 1720px;
+    max-width: 1800px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
     font-weight: 100;
+    padding-inline: 2rem;
 
-    /* background-color: red; */
+    /* border: 1px solid red; */
 }
 
 .header .name{
-    margin-left: 5vw;
     width: 300px;
     text-align: start;
     color: var(--red-text);
+    transition: color 0.3s ease;
+
+    /* border: 1px solid white */
 }
 
 .header .email{
-    margin-right: 5vw;
     width: 310px;
     text-align: end;
     color: var(--red-text);
+    transition: color 0.3s ease;
+
+    /* border: 1px solid white; */
+}
+
+.header .name:hover, .header .email:hover{
+    color: var(--white-text);
+    cursor: pointer;
 }
 
 .header .navigation{
     display: flex;
     margin-inline: 2vw;
+
+    /* border: 1px solid white */
 }
 
 .header .navigation .button{
     margin-right: 3vw;
     color: var(--white-text);
     transition: color 0.3s ease;
+
+    /* border: 1px solid white */
 }
 
 .header .navigation #cv{
@@ -111,12 +158,14 @@ section{
 }
 
 .footer{
-    padding-block: 4.5vw;
+    max-width: 1800px;
+    padding-block: 2.25rem;
     padding-inline: 4vw;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    margin: auto;
 }
 
 .footer .top-container{
@@ -150,11 +199,30 @@ section{
 .footer .bottom-container{
     align-self: start;
     font-size: 0.8rem;
+    width: 100%;
+
+    /* border: 1px solid black; */
+}
+
+.footer .bottom-container .updated, .footer .bottom-container .version{
+    color: var(--black-text);
+    margin-top: 0.5rem;
+}
+
+.footer .bottom-container .version span{
+    border-bottom: 1px solid var(--black-text);
+    padding-bottom: 1px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer .bottom-container .version span:hover{
+    cursor: pointer;
+    color: var(--grey-text);
+    border-color: var(--grey-text);
 }
 
 .footer .bottom-container .updated{
     margin-top: 2rem;
-    opacity: 0.2;
 }
 
 
@@ -241,19 +309,26 @@ section{
 
 @media (max-width:750px) {
     body{
-        padding-top: 5rem;
+        padding-top: 4.05rem;
     }
 
     /* Header */
     .header-container{
         padding-block: 1.15rem;
     }
+
+    .header{
+        padding-inline: 0.75rem;
+    }
+
     .header .navigation, .header .email{
         display: none;
     }
 
     .header .name{
-        font-size: 30px;
+        font-size: 1rem;
+        
+        /* border: 1px solid wheat; */
     }
 
     .header .mobile-navigation{
@@ -275,6 +350,10 @@ section{
 
 
     /* Footer */
+    .footer{
+        padding-block: 1.75rem;
+    }
+
     .footer .top-container{
         flex-direction: column;
         justify-content: space-around;
@@ -330,97 +409,3 @@ section{
         text-align: center;
     }
 }
-
-
-/* Landing */
-#landing{
-    background-color: var(--background);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-inline: 10px;
-
-    border: none
-}
-
-#landing .wrapper{
-    max-width: 875px;
-    /* border: 1px solid white; */
-    justify-self: start;
-    margin-top: -10vh;
-}
-
-#landing .wrapper h1 {
-    font-family: "Spline Sans Mono";
-    font-weight: 300;
-    color: var(--white-text);
-}
-
-#landing .wrapper h1 span{
-    color: var(--red-text);
-}
-
-#landing .wrapper #text-0{
-    font-size: 2rem;
-    font-weight: 400;
-}
-
-#landing .wrapper #text-1{
-    font-size: 4rem;
-}
-
-@media (max-width: 1000px){
-    #landing .wrapper{
-        max-width: 750px;
-    }
-
-    #landing .wrapper #text-0{
-        font-size: 1.75rem;
-    }
-    
-    #landing .wrapper #text-1{
-        font-size: 3.4rem;
-    }
-}
-
-@media (max-width: 800px){
-    #landing .wrapper{
-        max-width: 600px;
-    }
-
-    #landing .wrapper #text-0{
-        font-size: 1.15rem;
-    }
-    
-    #landing .wrapper #text-1{
-        font-size: 2.75rem;
-    }
-}
-
-@media (max-width: 650px){
-    #landing .wrapper{
-        max-width: 400px;
-    }
-
-    #landing .wrapper #text-0{
-        font-size: 1rem;
-    }
-    
-    #landing .wrapper #text-1{
-        font-size: 1.85rem;
-    }
-}
-
-@media (max-width: 410px) {
-    #landing .wrapper #text-0{
-        font-size: 0.85rem;
-    }
-    
-    #landing .wrapper #text-1{
-        font-size: 1.7rem;
-    }
-}
-
-
-
-
