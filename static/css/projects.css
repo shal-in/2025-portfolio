@@ -1,7 +1,0 @@
-.header .name svg{
-    height: 0.75rem;
-    width: auto;
-    margin-right: 0.15rem;
-    fill: var(--red-text);
-    transition: fill 0.3s ease;
-}
