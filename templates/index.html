@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/fonts.css">
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet">
     <title>Shalin Ahasan</title>
 </head>
 <body>
@@ -12,26 +16,178 @@
         <div class="header">
             <h1 class="home">Shalin</h1>
             <div class="navigation">
-                <button class="github">github</button>
-                <button class="linkedin">linkedin</button>
-                <button class="cv">cv</button>
-                <button class="writings">writings</button>
-                <button class="email">email</button>
+                <a class="github" href="/github">github</a>
+                <a class="linkedin" href="/linkedin">linkedin</a>
+                <a class="cv" href="/cv">cv</a>
+                <a class="writings" href="/writings">writings</a>
+                <a class="email" href="/email">email</a>
+                <a class="icon icon-github" href="/github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a class="icon icon-linkedin" href="/linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
+                <a href="/cv" class="icon icon-cv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6h-6v-6l6 6zm-8 2v-8h-12v24h20v-16h-8z"/></svg></a>
+                <a href="/writings" class="icon icon-writings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 5h-5.033c-2.743 0-4.967 2.239-4.967 5 0 2.762 2.224 5 4.967 5h5.033v-10zm2.007 17.475c-.52-.424-.902-.994-1.095-1.637l-1.151-3.827h-5.125l1.905 5.883c.214.659.828 1.106 1.521 1.106h3.439c.358 0 .677-.225.797-.562.12-.337.015-.713-.263-.939l-.028-.024zm-.007-17.475v2.014c3.088-.445 6.379-1.603 10-3.544v13.064c-3.607-1.924-6.958-3.109-10-3.548v2.014c3.164.509 7.16 1.992 12 5v-20c-4.964 3.085-8.877 4.502-12 5z"/></svg></a>
+                <a href="/email" class="icon icon-email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.042 23.648c-7.813 0-12.042-4.876-12.042-11.171 0-6.727 4.762-12.125 13.276-12.125 6.214 0 10.724 4.038 10.724 9.601 0 8.712-10.33 11.012-9.812 6.042-.71 1.108-1.854 2.354-4.053 2.354-2.516 0-4.08-1.842-4.08-4.807 0-4.444 2.921-8.199 6.379-8.199 1.659 0 2.8.876 3.277 2.221l.464-1.632h2.338c-.244.832-2.321 8.527-2.321 8.527-.648 2.666 1.35 2.713 3.122 1.297 3.329-2.58 3.501-9.327-.998-12.141-4.821-2.891-15.795-1.102-15.795 8.693 0 5.611 3.95 9.381 9.829 9.381 3.436 0 5.542-.93 7.295-1.948l1.177 1.698c-1.711.966-4.461 2.209-8.78 2.209zm-2.344-14.305c-.715 1.34-1.177 3.076-1.177 4.424 0 3.61 3.522 3.633 5.252.239.712-1.394 1.171-3.171 1.171-4.529 0-2.917-3.495-3.434-5.246-.134z"/></svg></a>
             </div>
-            <a class="email" href="test">Email me!</a>
+            <a class="email" href="/test">Email me!</a>
         </div>
     </div>
 
+    <section id="test"></section>
+
     <section id="landing">
         <div class="text">
-            <h2 class="hello">Hello!</h2>
+            <h2 class="hello"><span class="red">Hello!</span></h2>
             <div class="main">
-                <p>I'm Shalin Ahasan,</p>
-                <p>an aspiring Software Engineer,</p>
+                <p><span class="red">I'm</span> Shalin Ahasan<span class="red">,</span></p>
+                <p><span class="red">an</span> aspiring Software Engineer<span class="red">,</span></p>
                 <p>building fun things on the</p>
-                <p>internet.</p>
+                <p>internet<span class="red">.</span></p>
             </div>
         </div>
     </section>
+
+    <section id="bio">
+        <div class="text">
+            <p>I'm currently working as a self-employed tutor in Maths and Sciences. I'm looking to transition into software engineering. </p>
+            <p>Previously, I studied Natural Sciences at UCL, specialising in Molecular and Cell Biology.</p>
+        </div>
+
+        <div class="cv">
+            <div class="section" id="education">
+                <h2 class="title">education</h3>
+                <div class="item">
+                    <h3>Bachelor of Sciences (BSc.), Natural Sciences</h3>
+                    <p class="data"><span class="organisation">UCL</span> | <span class="date">2020-2024</span></p>
+                    <p class="description">Specialisation in Molecular and Cell Biology, and Synthetic Organic Chemistry</p>
+                </div>
+                <div class="item">
+                    <h3>A-levels</h3>
+                    <p class="data"><span class="organisation">NCS</span> | <span class="date">2018-2020</span></p>
+                    <p class="description">Maths (A*), Further Maths (A), Biology (A), and Chemistry (A)</p>
+                </div>
+            </div>
+            <div class="section" id="experience">
+                <h2 class="title">experience</h2>
+                <div class="item">
+                    <h3>Private Tutor (Maths and Sciences)</h3>
+                    <p class="data"><span class="organisation">Test</span> | <span class="date">09/18-present</span></p>
+                </div>
+                <div class="item">
+                    <h3>Private Tutor (Maths and Sciences)</h3>
+                    <p class="data"><span class="date">09/18-present</span></p>
+                </div>
+            </div>
+            <a href="/cv">view full CV <span class="icon"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 1.31187C15 0.980506 14.8684 0.662717 14.6341 0.428409C14.3998 0.194102 14.082 0.0624701 13.7506 0.0624701L3.75543 0C3.42407 0 3.10628 0.131633 2.87198 0.36594C2.63767 0.600247 2.50604 0.918036 2.50604 1.2494C2.50604 1.58076 2.63767 1.89855 2.87198 2.13285C3.10628 2.36716 3.42407 2.49879 3.75543 2.49879H10.7021L0.369569 12.8563C0.252465 12.9724 0.159518 13.1106 0.0960875 13.2629C0.0326573 13.4151 0 13.5784 0 13.7434C0 13.9083 0.0326573 14.0716 0.0960875 14.2238C0.159518 14.3761 0.252465 14.5143 0.369569 14.6304C0.485717 14.7475 0.623901 14.8405 0.776152 14.9039C0.928402 14.9673 1.09171 15 1.25664 15C1.42158 15 1.58488 14.9673 1.73713 14.9039C1.88938 14.8405 2.02756 14.7475 2.14371 14.6304L12.5012 4.27294V11.2446C12.5012 11.5759 12.6328 11.8937 12.8671 12.128C13.1015 12.3623 13.4192 12.494 13.7506 12.494C14.082 12.494 14.3998 12.3623 14.6341 12.128C14.8684 11.8937 15 11.5759 15 11.2446V1.31187Z"/>
+                </svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects">
+            <h2 class="title">Featured Projects</h2>
+            <div class="item">
+                <h2>Example Project 1</h2>
+                <div class="image-container">
+                    <img src="/static/assets/image.png" alt="">
+                </div>
+                <div class="bottom-container">
+                    <div class="description">
+                        <p>DASH - Distributed Adaptive Serverless Hosting offers a peer to peer, cost-effective, and efficient alternative for hosting serverless functions. It delivers a streamlined solution, designed with developers in mind providing simplicity and effectiveness without compromising performance.</p>
+                    </div>
+                    <div class="buttons">
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <h2>Example Project 1</h2>
+                <div class="image-container">
+                    <img src="/static/assets/image.png" alt="">
+                </div>
+                <div class="bottom-container">
+                    <div class="description">
+                        <p>DASH - Distributed Adaptive Serverless Hosting offers a peer to peer, cost-effective, and efficient alternative for hosting serverless functions. It delivers a streamlined solution, designed with developers in mind providing simplicity and effectiveness without compromising performance.</p>
+                    </div>
+                    <div class="buttons">
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stack">
+            <h1>tech stack</h1>
+            <div class="section backend">
+                <h2 class="title">backend</h2>
+                <div class="list">
+                    <div class="item python">python</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                </div>
+            </div>
+            <div class="section frontend">
+                <h2 class="title">frontend</h2>
+                <div class="list">
+                    <div class="item python">python</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                </div>
+            </div>
+            <div class="section backend">
+                <h2 class="title">backend</h2>
+                <div class="list">
+                    <div class="item python">python</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                    <div class="item javascript">javascript</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-container">
+        <div class="footer">
+            <div class="left">
+                <p>Built from scratch by yours truly.</p>
+                <p class="copyright"><span class="red">&copy;</span> Shalin Ahasan, 2025</p>
+                <p class="updated">Last updated on&nbsp;<span>15/07/2024</span>.</p>
+                <div class="old-portfolio">
+                    <p><a href="/2024">See 2024 portfolio</a></p>
+                </div>
+            </div>
+            <div class="navigation">
+                <a class="github" href="/github">github</a>
+                <a class="linkedin" href="/linkedin">linkedin</a>
+                <a class="cv" href="/cv">cv</a>
+                <a class="writings" href="/writings">writings</a>
+                <a class="email" href="/email">email</a>
+                <a class="icon icon-github" href="/github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a class="icon icon-linkedin" href="/linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
+                <a href="/cv" class="icon icon-cv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6h-6v-6l6 6zm-8 2v-8h-12v24h20v-16h-8z"/></svg></a>
+                <a href="/writings" class="icon icon-writings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 5h-5.033c-2.743 0-4.967 2.239-4.967 5 0 2.762 2.224 5 4.967 5h5.033v-10zm2.007 17.475c-.52-.424-.902-.994-1.095-1.637l-1.151-3.827h-5.125l1.905 5.883c.214.659.828 1.106 1.521 1.106h3.439c.358 0 .677-.225.797-.562.12-.337.015-.713-.263-.939l-.028-.024zm-.007-17.475v2.014c3.088-.445 6.379-1.603 10-3.544v13.064c-3.607-1.924-6.958-3.109-10-3.548v2.014c3.164.509 7.16 1.992 12 5v-20c-4.964 3.085-8.877 4.502-12 5z"/></svg></a>
+                <a href="/email" class="icon icon-email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.042 23.648c-7.813 0-12.042-4.876-12.042-11.171 0-6.727 4.762-12.125 13.276-12.125 6.214 0 10.724 4.038 10.724 9.601 0 8.712-10.33 11.012-9.812 6.042-.71 1.108-1.854 2.354-4.053 2.354-2.516 0-4.08-1.842-4.08-4.807 0-4.444 2.921-8.199 6.379-8.199 1.659 0 2.8.876 3.277 2.221l.464-1.632h2.338c-.244.832-2.321 8.527-2.321 8.527-.648 2.666 1.35 2.713 3.122 1.297 3.329-2.58 3.501-9.327-.998-12.141-4.821-2.891-15.795-1.102-15.795 8.693 0 5.611 3.95 9.381 9.829 9.381 3.436 0 5.542-.93 7.295-1.948l1.177 1.698c-1.711.966-4.461 2.209-8.78 2.209zm-2.344-14.305c-.715 1.34-1.177 3.076-1.177 4.424 0 3.61 3.522 3.633 5.252.239.712-1.394 1.171-3.171 1.171-4.529 0-2.917-3.495-3.434-5.246-.134z"/></svg></a>
+            </div>
+            <div class="right">
+                <a class="top" href="/top">back to top <div class="icon"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m18.787 9.473s-4.505-4.502-6.259-6.255c-.147-.146-.339-.22-.53-.22-.192 0-.384.074-.531.22-1.753 1.753-6.256 6.252-6.256 6.252-.147.147-.219.339-.217.532.001.19.075.38.221.525.292.293.766.295 1.056.004l4.977-4.976v14.692c0 .414.336.75.75.75.413 0 .75-.336.75-.75v-14.692l4.978 4.978c.289.29.762.287 1.055-.006.145-.145.219-.335.221-.525.002-.192-.07-.384-.215-.529z" fill-rule="nonzero"/></svg></div></a>
+                
+                <div class="old-portfolio">
+                    <p><a href="/2024">See 2024 portfolio</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
