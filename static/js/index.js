@@ -63,6 +63,60 @@ const observer = new IntersectionObserver(observerCallback, {
 
 observer.observe(projectsSectionEl);
 
+// Update tech stack
+const projectItemEls = document.querySelectorAll("#projects .projects div.item");
+const techStackEl = document.querySelector("#projects .stack");
+
+let stackSections = ["backend", "frontend"]
+const updateTechStack = (entry) => {
+if (entry.isIntersecting) {
+    let techStack = JSON.parse(entry.target.getAttribute("data-stack"));
+
+    stackSections.forEach(sectionTitle => {
+        let sectionEl = techStackEl.querySelector(`.${sectionTitle}`);
+        let sectionItems = techStack[sectionTitle];
+        
+        if (techStack.hasOwnProperty(sectionTitle)) {
+            sectionEl.classList.add("active");
+
+            sectionEl.querySelectorAll(".list .item").forEach(itemEl => {
+                let itemId = itemEl.getAttribute("data-id");
+                if (sectionItems.includes(itemId)) { // Check if the itemId exists in sectionItems
+                    itemEl.classList.add("active");
+                } else {
+                    itemEl.classList.remove("active");
+                }
+            });
+        } else {
+            sectionEl.classList.remove("active");
+
+            sectionEl.querySelectorAll(".list .item").forEach(itemEl => {
+                itemEl.classList.remove("active");
+            })
+        }
+    });
+} else {
+        entry.target.style.backgroundColor = ''; // Reset background color when out of view
+    }
+};
+
+// Define the callback for observing project items
+const projectItemVisibilityCallback = (entries) => {
+    entries.forEach(entry => {
+        entries.forEach(entry => {
+            updateTechStack(entry);
+        });
+    });
+};
+
+// Create a new IntersectionObserver specifically for project items
+const projectItemObserver = new IntersectionObserver(projectItemVisibilityCallback, {
+    root: null, // Use the viewport as the root
+    threshold: 0.60 // Trigger when at least 10% of the element is visible
+});
+
+// Observe each '.item' element
+projectItemEls.forEach(item => projectItemObserver.observe(item));
 
 
 // back to top button

@@ -25,7 +25,6 @@ section{
     max-width: 1920px;
     margin: auto;
     padding-block: 80px;
-
 }
 
 /* Text styles */
@@ -184,7 +183,7 @@ section{
 /* Footer */
 .footer-container{
     background-color: #191919;
-
+    background-color: var(--background);
 }
 
 .footer{
@@ -390,7 +389,7 @@ section{
     display: flex;
     font-family: "Space Grotesk", sans-serif;
     
-    display: none;
+    /* display: none; */
 }
 
 #landing .text{
@@ -475,7 +474,7 @@ section{
     padding-block: 80px;
     font-family: "Space Grotesk", sans-serif;
 
-    display: none;
+    /* display: none; */
 }
 
 /* Bio text */
@@ -648,7 +647,7 @@ section{
     display: flex; /* Create a flex container */
     position: relative; /* Set relative positioning for child elements */
     max-width: 1920px; /* Restrict the maximum width */
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0px auto; /* Center the container horizontally */
 
     /* display: none; */
 }
@@ -674,6 +673,10 @@ section{
     min-height: 95vh;
 
     /* border: 1px solid white; */
+}
+
+.projects .item:last-of-type{
+    min-height: 0px;
 }
 
 .projects .item .title{
@@ -776,41 +779,53 @@ section{
 }
 
 .stack {
-    width: 350px;
+    width: 325px;
     position: fixed;
-    top: 175px;
+    top: 120px;
     right: 8%;
     padding: 20px;
     opacity: 0;
-    visibility: hidden; /* Start as hidden */
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Delay visibility change */
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
     
-    border: 1px solid white;
+    /* border: 1px solid white;
     opacity: 1;
-    visibility: visible; /* Make visible */
+    visibility: visible; */
 }
 
 #projects.active .stack {
     opacity: 1;
-    visibility: visible; /* Make visible */
-    transition: opacity 0.5s ease, visibility 0s; /* Ensure no delay on visibility */
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s;
 }
 
 .stack h3{
-    font-size: 30px;
+    font-size: 24px;
     font-family: "Spline Sans", sans-serif;
     letter-spacing: 2px;
     font-weight: 200;
     color: var(--white-text);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.stack .section{
-    margin-bottom: 10px;
+.stack .section {
+    margin-bottom: 5px;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 }
+
+.stack .section.active, .stack .section {
+    visibility: visible;
+    opacity: 1;
+
+    transition: opacity 0.5s ease, visibility 0s linear 0s;
+}
+
 .stack .section .title{
     color: var(--grey-text);
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .stack .section .list{
@@ -820,32 +835,41 @@ section{
 
 .stack .section .list .item{
     background-color: var(--grey-text);
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 5px;
-    padding-inline: 7px;
-    border-radius: 10px;
-    display: flex;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    padding: 3px;
+    padding-inline: 5px;
+    border-radius:7px;
     align-items: center;
-    transition: 0.3s ease transform;
+    transition: 0.3s ease transform, opacity 0.5s ease, visibility 0s linear 0.5s;
+    display: flex;
+    cursor: default;
+
+    opacity: 0.15;
+}
+
+.stack .section .list .item.active{
+    visibility: visible;
+    opacity: 1;
+
+    transition: 0.3s ease transform, opacity 0.5s ease, visibility 0s linear 0.5s;
 }
 
 .stack .section .list .item img{
-    height: 26px;
+    height: 18px;
     width: auto;
     margin-right: 5px;
 }
 
 .stack .section .list .item p{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 1px;
     font-family: "Space Grotesk", sans-serif;
 }
 
-.stack .section .list .item:hover{
+.stack .section .list .item.active:hover{
     transform: translate(4px, -4px);
-    cursor: default;
 }
 
 @media screen and (min-width: 1920px) {
