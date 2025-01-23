@@ -24,7 +24,6 @@ section{
     background: var(--background);
     max-width: 1920px;
     margin: auto;
-    /* border: 1px solid white; */
     padding-block: 80px;
 
 }
@@ -44,8 +43,6 @@ section{
     width: 100vw;
     z-index: 100;
     background-color: var(--background);
-
-    border-bottom: 1px solid rgba(76, 76, 76, 0.67);
 }
 
 .header{
@@ -186,10 +183,8 @@ section{
 
 /* Footer */
 .footer-container{
-    width: 100vw;
     background-color: #191919;
 
-    border-top: 1px solid rgba(76, 76, 76, 0.67);
 }
 
 .footer{
@@ -395,7 +390,7 @@ section{
     display: flex;
     font-family: "Space Grotesk", sans-serif;
     
-    /* display: none; */
+    display: none;
 }
 
 #landing .text{
@@ -478,9 +473,9 @@ section{
     align-items: center;
     padding-inline: 40px;
     padding-block: 80px;
-
-    /* display: none; */
     font-family: "Space Grotesk", sans-serif;
+
+    display: none;
 }
 
 /* Bio text */
@@ -573,12 +568,6 @@ section{
     transform: translate(3px, -3px);
 }
 
-/* @media screen and (max-width: 1400px) {
-    #bio .text{
-        max-width: 650px;
-    }
-} */
-
 @media screen and (max-width: 1200px){
     #bio .text{
         max-width: 550px;
@@ -654,140 +643,340 @@ section{
     }
 }
 
-/* Projects */
+/* Projects container */
 #projects {
     display: flex; /* Create a flex container */
-    flex-direction: row; /* Ensure sections are side-by-side */
-    position: relative; /* Position the parent container for relative positioning */
+    position: relative; /* Set relative positioning for child elements */
+    max-width: 1920px; /* Restrict the maximum width */
+    margin: 0 auto; /* Center the container horizontally */
 
-    display: none;
+    /* display: none; */
 }
 
-
+/* Projects section */
 .projects {
-    width: 70%;
-    overflow-y: auto; /* Enable vertical scrolling for the projects section */
-    padding: 20px; /* Add some padding */
-}
+    width: 900px;
+    padding: 10px;
+    margin-left: 10vw;
 
-#projects .projects .title{
     color: var(--white-text);
+}
+
+.projects .title{
+    font-family: "Spline Sans", sans-serif;
     font-weight: 200;
-    letter-spacing: 1px;
-    font-size: 40px;
+    font-size: 50px;
+    margin-bottom: 40px;
 }
 
-/* Projects item */
-#projects .projects .item{
-    width: 92.5%;
-    min-height: 20px;
-    margin-left: auto;
-}
-
-#projects .projects .item h2{
-    color: var(--white-text);
-    font-weight: 200;
-}
-
-#projects .projects .item .image-container{
+.projects .item{
     width: 100%;
+    min-height: 95vh;
+
+    /* border: 1px solid white; */
+}
+
+.projects .item .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.projects .item .title h3{
+    font-weight: 200;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-size: "Space Grotesk";
+}
+
+.projects .item .title .type{
+    color: var(--white-text);
+    opacity: 0.3;
+    font-size: 24px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.projects .item .image-container{
+    max-width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
-#projects .projects .item .image-container img{
+.projects .item .image-container img{
     width: 100%;
     height: auto;
-    object-fit: cover;
-    transition: 0.3s transform ease;
+    overflow: hidden;
+    transform: scale(1.05);
+    transition: 0.3s ease transform;
 }
 
-#projects .projects .item .image-container img:hover{
-    transform: scale(1.025);
-    cursor: pointer;
+.projects .item img:hover{
+    transform: scale(1.1);
 }
 
-#projects .projects .item .bottom-container{
+.projects .item .description{
+    padding-inline: 20px;
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-#projects .projects .item .bottom-container .description{
-    width: 80%;
-    color: var(--white-text);
-    font-size: 20px;
-    letter-spacing: 1px;
+.projects .item .description .text{
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 200;
+    letter-spacing: 2px;
     text-align: justify;
+    margin-right: 30px;
 }
 
-#projects .projects .item .bottom-container .buttons{
+.projects .item .description .buttons{
     display: flex;
     flex-direction: column;
-    width: 20%;
-    justify-content: start;
-    align-items: end;
+    justify-content: space-evenly;
+    min-height: 150px;
+    max-height: 200px;
 }
 
-#projects .projects .item .bottom-container .buttons button{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    margin-right: 20px;
+.projects .item .description a{
+    height: 60px;
+    width: 60px;
+    border: 1px solid white;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#projects .projects .item .bottom-container .buttons button:last-of-type{
-    margin-top: 30px;
+.projects .item .description svg{
+    fill: white;
+    width: 60%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.projects .item .description a.active{
+    opacity: 0.4;
+    outline: none;
+}
 
+.projects .item .description a.active svg{
+    cursor: pointer;
+    transform: translateX(6px);
+    opacity: 0.4;
+    outline: none;
+}
+
+.projects .item .description a.github.active svg{
+    transform: translateX(0px);
+}
 
 .stack {
-    position: sticky; /* Stick it relative to the parent container */
-    top: 120px; /* Stick it to the top of its container when scrolling */
-    width: 300px; /* Set a fixed width for the tech stack */
-    height: fit-content; /* Make the stack as tall as its content */
-    padding: 20px; /* Add padding for spacing */
-}
-
-#projects .stack:hover{
+    width: 350px;
+    position: fixed;
+    top: 175px;
+    right: 8%;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden; /* Start as hidden */
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Delay visibility change */
+    
+    border: 1px solid white;
     opacity: 1;
+    visibility: visible; /* Make visible */
 }
 
-#projects .stack h1{
-    color: var(--white-text);
+#projects.active .stack {
+    opacity: 1;
+    visibility: visible; /* Make visible */
+    transition: opacity 0.5s ease, visibility 0s; /* Ensure no delay on visibility */
+}
+
+.stack h3{
     font-size: 30px;
-    letter-spacing: 2.2px;
+    font-family: "Spline Sans", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 200;
+    color: var(--white-text);
     margin-bottom: 10px;
 }
 
-#projects .stack .section .title{
+.stack .section{
+    margin-bottom: 10px;
+}
+.stack .section .title{
     color: var(--grey-text);
-    font-weight: 400;
-    font-size: 25px;
-    margin-bottom: 5px;
+    font-size: 24px;
 }
 
-#projects .stack .section .list{
+.stack .section .list{
     display: flex;
     flex-wrap: wrap;
 }
 
-#projects .stack .section .list .item{
-    color: var(--white-text);
-    padding: 4px;
-    border: 1px solid var(--white-text);
-    border-radius: 4px;
+.stack .section .list .item{
+    background-color: var(--grey-text);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-inline: 7px;
+    border-radius: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-size: 18px;
+    transition: 0.3s ease transform;
 }
 
-@media screen and (max-width: 1250px){
-    #projects .projects{
-        max-width: 650px;
+.stack .section .list .item img{
+    height: 26px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.stack .section .list .item p{
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.stack .section .list .item:hover{
+    transform: translate(4px, -4px);
+    cursor: default;
+}
+
+@media screen and (min-width: 1920px) {
+    .stack{
+        right: calc((100vw - 1920px + 400px) / 2);;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .projects{
+        margin-left: 5%;
+    }
+
+    .stack{
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .projects{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 1325px) {
+    .projects{
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 1225px) {
+    .projects{
+        margin-left: 3%;
+    }
+    .stack{
+        width: 250px;
+        right: 3%;
+    }
+
+    .stack .section .list .item{
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 3px;
+        padding-inline: 5px;
+    }
+    
+    .stack .section .list .item img{
+        height: 22px;
+        width: auto;
+        margin-right: 4px;
+    }
+    
+    .stack .section .list .item p{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .projects{
+        width: 650px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .projects{
+        width: 650px;
+        margin-left: 1%;
+    }
+
+    .stack{
+        right: 1%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .projects{
+        width: 900px;
+        max-width: 900px;
+        margin: auto;
+        padding-inline: 3%;
+    }
+
+    .stack{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #projects .projects h3.title{
+        font-size: 40px;
+    }
+
+    .projects .item .title h3{
+        font-size: 25px;
+    }
+
+    .projects .item .title .type{
+        font-size: 18px;
+    }
+
+
+    .projects .item .description{
+        flex-direction: column;
+        padding-inline: 2%;
+    }
+
+    .projects .item .description .text{
+        margin-right: 0px;
+    }
+
+    .projects .item .description .buttons{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: end;
+        min-height: none;
+        margin-top: 20px;
+    }
+
+    .projects .item .description .buttons a{
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #projects .projects h3.title{
+        font-size: 36px;
+    }
+
+
+
+    .projects .item .description .text{
+        font-size: 16px;
     }
 }
