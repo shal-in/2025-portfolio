@@ -14,6 +14,39 @@
     background-color: rgba(97, 38, 38, 0.371);
 }
 
+/* For modern browsers */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--red-text);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--background);
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--red-text) var(--background);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 body{
     background-color: var(--background);
     min-height: 80vh;
@@ -53,7 +86,11 @@ section{
     padding-inline: 60px;
     padding-block: 20px;
     font-family: "Spline Sans", sans-serif;
+    opacity: 0;
+    transition: 0.75s ease opacity;
 }
+
+
 
 .header h1, .header a.email{
     font-weight: 400;
@@ -279,6 +316,8 @@ section{
     font-size: 1rem;
     transition: color 0.3s ease;
     margin-bottom: 1.25rem;
+    background-color: var(--background);
+    border: none;
 }
 
 .footer .right .top.active{
@@ -461,6 +500,24 @@ section{
     #landing .text .main{
         font-size: 5vw;
         letter-spacing: 0.525vw;
+    }
+}
+
+/* Change the cursor color to red */
+.Typewriter__cursor {
+    color: red; /* Change the color */
+    font-size: 1em; /* Adjust the size if needed */
+    animation: blink 0.7s infinite; /* Customize the blinking */
+    display: none;
+}
+
+/* Optional: Customize the blinking effect */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
     }
 }
 
@@ -714,12 +771,12 @@ section{
     width: 100%;
     height: auto;
     overflow: hidden;
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: 0.3s ease transform;
 }
 
 .projects .item img:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .projects .item .description{
@@ -759,7 +816,7 @@ section{
     fill: white;
     width: 60%;
     height: auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;   
 }
 
 .projects .item .description a.active{
@@ -808,19 +865,24 @@ section{
     margin-bottom: 5px;
 }
 
-.stack .section {
+.stack .section{
     margin-bottom: 5px;
-    visibility: hidden;
-    opacity: 0;
-
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
-}
-
-.stack .section.active, .stack .section {
     visibility: visible;
     opacity: 1;
 
     transition: opacity 0.5s ease, visibility 0s linear 0s;
+}
+
+.stack .section.other {
+    visibility: hidden; /* Start with the element hidden */
+    opacity: 0; /* Start with the element fully transparent */
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Delay visibility change */
+}
+
+.stack .section.other.active {
+    visibility: visible; /* Show the element when active */
+    opacity: 1; /* Make it fully opaque */
+    transition: opacity 0.5s ease, visibility 0s linear 0s; /* Instant visibility change when active */
 }
 
 .stack .section .title{
