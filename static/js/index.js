@@ -245,127 +245,143 @@ fadeUpElements.forEach(el => fadeUpObserver.observe(el));
 
 // Typewriter effect
 document.addEventListener("DOMContentLoaded", () => {
-    let typing = document.querySelector("#landing .text");
+    if (sessionStorage.getItem('typingAnimationShown')) {
+        setTimeout(() => {
+            let headerEl = document.querySelector(".header");
+            headerEl.style.opacity = "1";
+        }, 250);
 
-    let hello = typing.querySelector(".hello");
-    let p1 = typing.querySelector("#p1")
-    let p2 = typing.querySelector("#p2")
-    let p3 = typing.querySelector("#p3")
-    let p4 = typing.querySelector("#p4")
-
-    var typewriter = new Typewriter(hello, {
-        loop: false,
-        delay: 30
-    });
-
-    typewriter
-        .callFunction(() => {
-            const cursor = hello.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'inline';
-            }
-        })
-        .pauseFor(600)
-        .typeString(`<span class="red">Hello!</span>`)
-        .pauseFor(100)
-        .callFunction(() => {
-            const cursor = hello.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'none';
-            }
-        })
-        .callFunction(() => {
-            const cursor = p1.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'inline';
-            }
-        })
-        .start();
-
-    typewriter = new Typewriter(p1, {
-        loop: false,
-        delay: 45
-    });
-
-    typewriter
-        .pauseFor(1100)
-        .typeString(`<span class="red">I'm </span>Shalin Ahasan<span class="red">,</span>`)
-        .pauseFor(100)
-        .callFunction(() => {
-            const cursor = p1.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'none';
-            }
-        })
-        .callFunction(() => {
-            const cursor = p2.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'inline';
-            }
-        })
-        .start();
-
-
-    typewriter = new Typewriter(p2, {
-        loop: false,
-        delay: 45
-    });
-
-    typewriter
-        .pauseFor(2750)
-        .typeString(`<span class="red">an</span> aspiring Software Engineer<span class="red">,</span>`)
-        .callFunction(() => {
-            const cursor = p2.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'none';
-            }
-        })
-        .callFunction(() => {
-            const cursor = p3.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'inline';
-            }
-        })
-        .start();
-
-
-    typewriter = new Typewriter(p3, {
-        loop: false,
-        delay: 45
-    });
-
-    typewriter
-        .pauseFor(4800)
-        .typeString(`building things on `)
-        .pauseFor(150)
-        .deleteChars(10)
-        .typeString(`fun things on the`)
-        .callFunction(() => {
-            const cursor = p3.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'none';
-            }
-        })
-        .callFunction(() => {
-            const cursor = p4.querySelector('.Typewriter__cursor');
-            if (cursor) {
-                cursor.style.display = 'inline';
-            }
-        })
-        .start()
+        document.querySelector(".hello").innerHTML = '<span class="red">Hello!</span>';
+        document.querySelector("#p1").innerHTML = '<span class="red">I\'m </span>Shalin Ahasan<span class="red">,</span>';
+        document.querySelector("#p2").innerHTML = '<span class="red">a</span> Software Engineer<span class="red">,</span>';
+        document.querySelector("#p3").innerHTML = 'building fun things on the';
+        document.querySelector("#p4").innerHTML = 'internet<span class="red">.</span>';
         
-    typewriter = new Typewriter(p4, {
-        loop: false,
-        delay: 45
-    });
+    } else {
+        let typing = document.querySelector("#landing .text");
 
-    typewriter
-        .pauseFor(8200)
-        .typeString(`internet<span class="red">.</span>`)
-        .start();
+        let hello = typing.querySelector(".hello");
+        let p1 = typing.querySelector("#p1")
+        let p2 = typing.querySelector("#p2")
+        let p3 = typing.querySelector("#p3")
+        let p4 = typing.querySelector("#p4")
 
-    setTimeout(() => {
-        let headerEl = document.querySelector(".header");
-        headerEl.style.opacity = "1";
-    }, 9200);
+        var typewriter = new Typewriter(hello, {
+            loop: false,
+            delay: 30
+        });
+
+        typewriter
+            .callFunction(() => {
+                const cursor = hello.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'inline';
+                }
+            })
+            .pauseFor(600)
+            .typeString(`<span class="red">Hello!</span>`)
+            .pauseFor(100)
+            .callFunction(() => {
+                const cursor = hello.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'none';
+                }
+            })
+            .callFunction(() => {
+                const cursor = p1.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'inline';
+                }
+            })
+            .start();
+
+        typewriter = new Typewriter(p1, {
+            loop: false,
+            delay: 45
+        });
+
+        typewriter
+            .pauseFor(1100)
+            .typeString(`<span class="red">I'm </span>Shalin Ahasan<span class="red">,</span>`)
+            .pauseFor(100)
+            .callFunction(() => {
+                const cursor = p1.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'none';
+                }
+            })
+            .callFunction(() => {
+                const cursor = p2.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'inline';
+                }
+            })
+            .start();
+
+
+        typewriter = new Typewriter(p2, {
+            loop: false,
+            delay: 45
+        });
+
+        typewriter
+            .pauseFor(2750)
+            .typeString(`<span class="red">a</span> Software Engineer<span class="red">,</span>`)
+            .callFunction(() => {
+                const cursor = p2.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'none';
+                }
+            })
+            .callFunction(() => {
+                const cursor = p3.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'inline';
+                }
+            })
+            .start();
+
+
+        typewriter = new Typewriter(p3, {
+            loop: false,
+            delay: 45
+        });
+
+        typewriter
+            .pauseFor(4800)
+            .typeString(`building things on `)
+            .pauseFor(150)
+            .deleteChars(10)
+            .typeString(`fun things on the`)
+            .callFunction(() => {
+                const cursor = p3.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'none';
+                }
+            })
+            .callFunction(() => {
+                const cursor = p4.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.display = 'inline';
+                }
+            })
+            .start();
+        
+        typewriter = new Typewriter(p4, {
+            loop: false,
+            delay: 45
+        });
+
+        typewriter
+            .pauseFor(8200)
+            .typeString(`internet<span class="red">.</span>`)
+            .start();
+
+        setTimeout(() => {
+            let headerEl = document.querySelector(".header");
+            headerEl.style.opacity = "1";
+
+            sessionStorage.setItem('typingAnimationShown', 'true');
+        }, 9200);
+    }
 });
